@@ -1,0 +1,9 @@
+/target/classes/
+/.idea/
+/src/main/resources/templates/pages/
+/src/main/resources/static/plugins/
+/src/main/resources/static/dist/
+*.gzip
+*.log
+*.bower.json
+*.md

@@ -1,0 +1,17 @@
+server:
+  shutdown: graceful
+  port: 12300
+
+spring:
+  application:
+    name: web-admin
+  freemarker:
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    template-loader-path: classpath:/templates
+    suffix: .html

@@ -1,0 +1,16 @@
+#StripPrefix 剥离的路径个数
+spring:
+  cloud:
+    nacos:
+      server-addr: http://140.210.90.115:8848
+      discovery:
+        namespace: 20adf743-362b-4097-b65e-59fff9fc6279
+      config:
+        group: DEFAULT_GROUP
+        namespace: 20adf743-362b-4097-b65e-59fff9fc6279
+        file-extension: yml
+        extension-configs:
+          - data-id: datasource.yml
+            refresh: true
+          - data-id: jpa.yml
+            refresh: true

@@ -1,0 +1,44 @@
+<div class="form-inline justify-content-end">
+    <span class="mr-2">当前第{{page.pageable.pageNumber + 1}}页,</span><span class="mr-2">共{{page.totalElements}}页</span>
+    <select class="form-select form-control mr-2">
+        <option value="{{page.pageable.pageSize}}" selected="{{page.pageable.pageSize}}">每页{{page.pageable.pageSize}}条
+        </option>
+        <option value="10">每页10条</option>
+        <option value="20">每页20条</option>
+        <option value="50">每页50条</option>
+        <option value="100">每页100条</option>
+    </select>
+    <div class="btn-group mr-2" role="group">
+        <button type="button" class="btn btn-primary"
+                ng-disabled="page.pageable.pageNumber == 0"
+                ng-click="page.pageClickCallback(page.pageable.pageNumber-1, page.pageable.pageSize);">上一页
+        </button>
+        <button type="button" class="btn btn-primary"
+                ng-disabled="page.pageable.pageNumber == (page.totalPages - 1)"
+                ng-click="page.pageClickCallback(page.pageable.pageNumber+1, page.pageable.pageSize);">下一页
+        </button>
+    </div>
+    <span class="mr-2">去</span>
+    <select class="form-select form-control mr-2">
+        <option ng-repeat="p in page.totalPagesArray" value="{{p}}">{{p+1}}</option>
+    </select>页
+</div>
+
+
+<!--<div class="col-2">
+    <div>
+        <ul class="pager">
+            <li class="previous" ng-class="{true:'disabled',false:''}[page.pageable.pageNumber == 0]">
+                &lt;!&ndash; 当前为第一页，上一页 disabled&ndash;&gt;
+                <a href="javascript:void(0)"
+                   ng-click="page.pageClickCallback(page.pageable.pageNumber-1, page.pageable.pageSize);">上一页</a>
+            </li>
+            <li class="next"
+                ng-class="{true:'disabled',false:''}[page.pageable.pageNumber == (page.totalPages - 1)]">
+                &lt;!&ndash; 当前为最后一页，下一页 disabled&ndash;&gt;
+                <a href="javascript:void(0)"
+                   ng-click="page.pageClickCallback(page.pageable.pageNumber+1, page.pageable.pageSize);">下一页</a>
+            </li>
+        </ul>
+    </div>
+</div>-->
